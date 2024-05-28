@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 19.2, y: 51.2}
+  m_AnchoredPosition: {x: 19.199997, y: 51.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63775203
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Timer:'
+  m_text: 'Timer: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -442,6 +442,8 @@ GameObject:
   - component: {fileID: 170192685}
   - component: {fileID: 170192684}
   - component: {fileID: 170192683}
+  - component: {fileID: 170192686}
+  - component: {fileID: 170192687}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -520,7 +522,7 @@ Canvas:
   m_GameObject: {fileID: 170192681}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -534,6 +536,33 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &170192686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170192681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343991ffa89b95a4cb50215a0f1e0bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 63775203}
+  remaningTime: 30
+--- !u!114 &170192687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170192681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef00e8fb1bcc0734a9cc9165967cdc70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointValue: 0
 --- !u!1 &449446839
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1770621480}
   gameOverText: {fileID: 1904266271}
+  isGameActive: 0
 --- !u!4 &449446841
 Transform:
   m_ObjectHideFlags: 0

@@ -22,6 +22,9 @@ public class Target : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        Destroy(gameObject);
         gameManager.UpdateScore(pointValue);
     }
+
+
 }
