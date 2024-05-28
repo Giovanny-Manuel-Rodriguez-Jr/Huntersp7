@@ -6,35 +6,39 @@ using JetBrains.Annotations;
 
 public class GameManager : MonoBehaviour
 {
-    private int score;
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
+    
+
+  
+    
     public bool isGameActive;
     private int index;
     private float spawnRate;
+
+    
 
     public object targets { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
+        
         StartCoroutine(SpawnTarget(GetIndex()));
-        score = 0;
-        UpdateScore(0);
+      
+        
+        
 
 
         isGameActive = true;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+  
+   
+  
 
-    }
-    public void UpdateScore(int scoreToAdd)
+    public void GameOver()
     {
-        score += scoreToAdd;
-        scoreText.text = "Score : " + score;
+        
     }
 
     private int GetIndex()
@@ -54,9 +58,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void GameOver()
+    private void gameOver()
     {
-        gameOverText.gameObject.SetActive(true);
+       
         isGameActive = false;
     }
 }

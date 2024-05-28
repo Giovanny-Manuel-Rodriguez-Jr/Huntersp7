@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectCollisions : MonoBehaviour
+public class Test : MonoBehaviour
 {
+    public Scoring score;
 
-    
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +15,9 @@ public class DetectCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-       
-        Destroy(other.gameObject);
-
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            score.AddScore(1);
+        }
     }
 }

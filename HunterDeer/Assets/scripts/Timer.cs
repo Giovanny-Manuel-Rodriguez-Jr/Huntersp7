@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
         else if (remaningTime < 0)
         {
             remaningTime = 0;
-            // GameOver();
+         
             timerText.color = Color.red;
         }
 
