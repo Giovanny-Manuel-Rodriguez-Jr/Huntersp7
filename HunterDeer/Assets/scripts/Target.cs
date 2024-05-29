@@ -21,8 +21,11 @@ public class Target : MonoBehaviour
         
     }
     private void OnMouseDown()
-    {
-        Destroy(gameObject);
+    {  if(gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+        }
+       
        
     }
 

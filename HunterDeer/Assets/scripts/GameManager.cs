@@ -5,18 +5,14 @@ using TMPro;
 using JetBrains.Annotations;
 
 public class GameManager : MonoBehaviour
-{
-    
-
-  
-    
+{ 
     public bool isGameActive;
     private int index;
     private float spawnRate;
 
     
 
-    public object targets { get; private set; }
+   
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +21,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnTarget(GetIndex()));
       
         
-        
-
 
         isGameActive = true;
     }
@@ -38,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        
+         isGameActive=false;
     }
 
     private int GetIndex()
@@ -48,19 +42,14 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnTarget(int index)
     {
-       while(isGameActive)
+        while (isGameActive)
         {
             yield return new WaitForSeconds(spawnRate);
-            // Instantiate(targets[Index]);
-
-           
+           // int index = Random.Range(0, targets.Count);
+           // Instantiate(targets[Index]);
         }
 
     }
 
-    private void gameOver()
-    {
-       
-        isGameActive = false;
-    }
+   
 }
