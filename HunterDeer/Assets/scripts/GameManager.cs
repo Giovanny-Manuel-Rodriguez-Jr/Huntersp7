@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     private int index;
     private float spawnRate;
+    public TextMeshProUGUI gameOverText;
+   
 
+   
     
 
    
@@ -22,13 +26,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        StartCoroutine(SpawnTarget(GetIndex()));
       
+        StartCoroutine(SpawnTarget(GetIndex()));
+        gameOverText.gameObject.SetActive(true);
         
-
-        isGameActive = true;
+       
     }
+
+    
 
     void ChangePaused()
     {
@@ -53,8 +58,10 @@ public class GameManager : MonoBehaviour
         {
             ChangePaused();
         }
-    }
+        
 
+    }
+    
     // Update is called once per frame
 
 
@@ -62,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-         isGameActive=false;
+        isGameActive = false;
     }
 
     private int GetIndex()

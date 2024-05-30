@@ -25,9 +25,15 @@ public class Target : MonoBehaviour
         {
             Destroy(gameObject);
         }
-       
-       
     }
 
-
+    private void OnTrigerEnter(Collider other)
+    {
+     
+        Destroy(gameObject);
+        if (!gameObject.CompareTag("Sensor"))
+        {
+            gameManager.GameOver();
+        }
+    }
 }
