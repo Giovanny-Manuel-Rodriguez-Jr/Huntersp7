@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 2585391899906003017}
   m_Layer: 0
   m_Name: Animal_Moose_02
-  m_TagString: Deer
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

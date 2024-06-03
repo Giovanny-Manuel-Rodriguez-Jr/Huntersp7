@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 5629696931592997278}
   m_Layer: 0
   m_Name: Animal_Stag_02
-  m_TagString: Deer
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

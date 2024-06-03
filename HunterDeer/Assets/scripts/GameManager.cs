@@ -5,32 +5,36 @@ using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEditor.Build.Content;
+
 
 public class GameManager : MonoBehaviour
 {
-
+    
     public GameObject pauseScreen;
     private bool paused;
 
     public bool isGameActive;
     private int index;
     private float spawnRate;
-    public TextMeshProUGUI gameOverText;
-   
+    public void Retry()
+    {
+        //Restarts current level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
-   
-    
 
-   
+
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
       
-        StartCoroutine(SpawnTarget(GetIndex()));
-        gameOverText.gameObject.SetActive(true);
-        
-       
+        StartCoroutine(SpawnTarget(GetIndex()));   
     }
 
     
@@ -52,13 +56,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.P))
         {
             ChangePaused();
         }
-        
+
+        if (Input.GetKeyDown("r"))
+        {
+            Time.timeScale = 1f;
+
+            Retry();
+        }
+
+       
+
+
 
     }
     
@@ -67,10 +83,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void GameOver()
-    {
-        isGameActive = false;
-    }
+   
 
     private int GetIndex()
     {
@@ -88,10 +101,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void ResartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+   
+
+  
 
 
 }

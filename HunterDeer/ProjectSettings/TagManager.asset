@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Deer
   - Sensor
+  - Bad
   layers:
   - Default
   - TransparentFX
