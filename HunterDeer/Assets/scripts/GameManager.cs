@@ -5,7 +5,7 @@ using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 using System;
-using UnityEditor.Build.Content;
+
 
 
 public class GameManager : MonoBehaviour
